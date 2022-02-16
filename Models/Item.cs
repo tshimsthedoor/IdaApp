@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace IdaApp.Models
         public string Borrower { get; set; }
 
         public string Lender { get; set; }
+        [DisplayName("Item Name")]
         public string ItemName { get; set; }
 
     }
