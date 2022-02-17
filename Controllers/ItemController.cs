@@ -34,9 +34,14 @@ namespace IdaApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Item obj)
         {
-            _db.Items.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+
+                _db.Items.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
         }
     }
 }
